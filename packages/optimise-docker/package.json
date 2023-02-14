@@ -1,0 +1,31 @@
+{
+    "name": "optimise-docker",
+    "version": "2.1.5",
+    "description": "Optimise:MS Docker",
+    "keywords": [
+        "ms",
+        "optimise"
+    ],
+    "bugs": {
+        "url": "https://github.com/dsi-icl/optimise/issues"
+    },
+    "repository": "https://github.com/dsi-icl/optimise",
+    "license": "MIT",
+    "contributors": [
+        "Florian Guitton <f.guitton@imperial.ac.uk>"
+    ],
+    "scripts": {
+        "lint": "eslint .",
+        "prebuild": "cd ../optimise-ui && cross-env PUBLIC_URL=/ yarn build",
+        "build": "docker build -t datascienceinstitute/optimise:latest -f Dockerfile ..",
+        "build-noui": "docker build -t datascienceinstitute/optimise:latest -f Dockerfile ..",
+        "start": "echo Nothing to start",
+        "test": "echo No test"
+    },
+    "dependencies": {
+        "compression": "1.7.4",
+        "express": "4.18.2",
+        "express-rate-limit": "6.6.0",
+        "sqlite3": "5.1.2"
+    }
+}
