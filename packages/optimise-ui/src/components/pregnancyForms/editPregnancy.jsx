@@ -38,6 +38,8 @@ export default class EditPregnancies extends Component {
                 return <PregnancyFollowupDataForm renderedInFrontPage={renderedInFrontPage}/>;
             case 'term':
                 return <PregnancyPostDataForm renderedInFrontPage={renderedInFrontPage}/>;
+            default:
+                break;
         }
     }
 }

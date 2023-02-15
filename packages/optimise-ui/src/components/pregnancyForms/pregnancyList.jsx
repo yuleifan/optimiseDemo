@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { PatientProfileSectionScaffold, DeleteButton, EditButton, PatientProfileTop } from '../patientProfile/sharedComponents';
+import { PatientProfileSectionScaffold,PatientProfileTop } from '../patientProfile/sharedComponents';
 import { withRouter, Link } from 'react-router-dom';
 import { examplePregnancyData, addEntryToPregnancy, testPregnancy } from './exampleData';
 import Helmet from '../scaffold/helmet';
@@ -173,6 +173,8 @@ class OneDataEntry extends Component {
                 return <OneDataEntryFollowup data={data} renderedInFrontPage={this.props.renderedInFrontPage}/>;
             case 'term':
                 return <OneDataEntryTerm data={data} renderedInFrontPage={this.props.renderedInFrontPage}/>;
+            default:
+                break;
         }
     }
 }
